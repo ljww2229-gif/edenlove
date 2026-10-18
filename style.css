@@ -231,3 +231,9 @@ a { color: inherit; }
   .spec div { flex-direction: column; gap: 2px; }
   .spec dd { text-align: left; }
 }
+
+/* Relation names & logline sub */
+.rel-person .names { font-size: .95rem; }
+.rel-person .names b { color: var(--text); }
+.rel-person .names small { color: var(--muted); }
+.logline span { display: block; font-size: .95rem; color: var(--muted); margin-top: 6px; }
