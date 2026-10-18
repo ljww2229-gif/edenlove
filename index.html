@@ -4,112 +4,101 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eden Love</title>
-  <meta name="description" content="에덴 × 아샤 페어 소개 — S급 가이드와 S급 센티넬의 프로필과 서사">
+  <meta name="description" content="EDEN × ASHA — 707호 데스크톱. S급 가이드와 S급 센티넬의 페어 소개">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@400;700&family=DotGothic16&family=Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="logo">EDEN<span>♥</span>LOVE</a>
-      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-      <nav class="nav" id="nav">
-        <a href="#relation">관계</a>
-        <a href="#profile">프로필</a>
-        <a href="#story">서사</a>
-        <a href="#world">키워드</a>
-        <a href="#quotes">대사</a>
-      </nav>
+  <!-- 부팅 화면 -->
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <p class="boot-logo">EDEN<span>♥</span>LOVE <small>OS 707</small></p>
+      <div class="boot-bar"><div></div></div>
+      <p class="boot-msg">S급 전용관 707호에 접속 중…</p>
     </div>
+  </div>
+
+  <!-- 상단 메뉴바 -->
+  <header class="menubar">
+    <span class="menu-logo">♥</span>
+    <button class="menu-item" data-open="win-player">File</button>
+    <button class="menu-item" data-open="win-story">Story</button>
+    <button class="menu-item" data-open="win-help">Help</button>
+    <span class="menu-spacer"></span>
+    <span class="menu-guide">GUIDING <b>0%</b></span>
+    <time class="menu-clock" id="clock">SAT 6/20 00:00</time>
   </header>
 
-  <main id="top">
-    <!-- 메인: 뮤직 플레이어 -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <figure class="cover">
-          <img src="images/main.webp" alt="분홍 머리의 아샤가 금발의 에덴에게 입을 맞추는 일러스트">
-        </figure>
+  <!-- 바탕화면 -->
+  <main class="desktop" id="desktop">
+    <div class="sparkles" aria-hidden="true"></div>
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+    <div class="cloud c3" aria-hidden="true"></div>
 
-        <div class="player">
-          <p class="now-playing"><span class="dot"></span> NOW PLAYING</p>
-          <h1>에덴 <small>×</small> 아샤</h1>
-          <p class="pair-en">Eden × Asha · S-Class Guide × S-Class Sentinel</p>
+    <h1 class="desk-logo" aria-label="EDEN × ASHA">
+      <span class="l-eden">EDEN</span><span class="l-x">×</span><span class="l-asha">ASHA</span>
+      <small>707호의 바탕화면</small>
+    </h1>
+
+    <!-- 아이콘 -->
+    <nav class="icons left" aria-label="바탕화면 아이콘">
+      <button class="icon" data-open="win-player"><span class="ico">💿</span><span class="lbl">Now Playing</span></button>
+      <button class="icon" data-open="win-eden"><span class="ico">🔫</span><span class="lbl">EDEN.exe</span></button>
+      <button class="icon" data-open="win-asha"><span class="ico">🔥</span><span class="lbl">ASHA.exe</span></button>
+      <button class="icon" data-open="win-relation"><span class="ico">💌</span><span class="lbl">relation.txt</span></button>
+      <button class="icon" data-open="win-story"><span class="ico">📼</span><span class="lbl">tracklist.mp3</span></button>
+    </nav>
+    <nav class="icons right" aria-label="바탕화면 아이콘">
+      <button class="icon" data-open="win-chat"><span class="ico">💬</span><span class="lbl">M.Chat</span></button>
+      <button class="icon" data-open="win-help"><span class="ico">📒</span><span class="lbl">keywords.hlp</span></button>
+      <button class="icon" data-open="win-rate"><span class="ico">⭐</span><span class="lbl">별점수첩</span></button>
+      <button class="icon" id="candy-icon"><span class="ico">🍋</span><span class="lbl">레몬사탕 <em id="candy-count">0</em></span></button>
+      <button class="icon" data-open="win-trash"><span class="ico">🗑️</span><span class="lbl">휴지통</span></button>
+    </nav>
+
+    <!-- 창: Now Playing -->
+    <section class="win" id="win-player" data-x="4%" data-y="70" data-w="640" hidden>
+      <header class="titlebar"><span class="t-ico">💿</span><span class="t-name">now_playing.mp3</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body player">
+        <div class="cover protect"><img src="images/main.webp" alt="아샤가 에덴에게 입을 맞추는 일러스트" draggable="false"></div>
+        <div class="player-side">
+          <p class="np"><span class="dot"></span> NOW PLAYING</p>
+          <h2>에덴 <small>×</small> 아샤</h2>
+          <p class="sub">홍예준 × 이별하 · S-Class Guide × S-Class Sentinel</p>
           <p class="logline">“…찾았네.”<br><span>폐허에서 시작된 강제 각인, 707호에서 시작된 사랑.</span></p>
-
           <ul class="tags">
-            <li>#센티넬버스</li>
-            <li>#강제각인</li>
-            <li>#707호_동거</li>
-            <li>#별5점_만점</li>
-            <li>#레몬사탕</li>
-            <li>#혐관에서_연인</li>
+            <li>#센티넬버스</li><li>#강제각인</li><li>#707호_동거</li>
+            <li>#별5점_만점</li><li>#레몬사탕</li><li>#혐관에서_연인</li>
           </ul>
-
-          <div class="progress">
-            <span class="time">GUIDING</span>
-            <div class="bar">
-              <div class="fill"></div>
-              <i class="mark warn" title="폭주 징후 65%"></i>
-              <i class="mark crit" title="임계점 70%"></i>
+          <div class="song">
+            <p class="song-name">♪ Steady Hands</p>
+            <div class="seek"><div class="seek-fill"></div></div>
+            <div class="seek-time"><span id="song-time">0:00</span><span>4:30</span></div>
+            <div class="ctrls">
+              <button data-open="win-story" aria-label="트랙리스트">⏮</button>
+              <button class="play" id="play-btn" aria-label="재생">▶</button>
+              <button data-open="win-story" aria-label="트랙리스트">⏭</button>
             </div>
-            <span class="time">64%</span>
-          </div>
-          <p class="gauge-note">65% 폭주 징후 · 70% 임계점</p>
-          <div class="controls" aria-hidden="true">
-            <button tabindex="-1">⏮</button>
-            <button tabindex="-1" class="play">⏸</button>
-            <button tabindex="-1">⏭</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 관계 -->
-    <section id="relation" class="section">
-      <div class="container">
-        <h2 class="section-title"><span>01</span> 관계</h2>
-        <div class="relation">
-          <div class="rel-person asha">
-            <strong>아샤</strong>
-            <span>이별하 · 23</span>
-            <p class="names">에덴님 → 에덴 → 에덴 오빠 → <b>예준 오빠</b></p>
-            <p class="feel">강제 각인된 그날부터 에덴을 ‘파트너’로 생각했다. 무표정 가면은 그의 앞에서만 벗는다.</p>
-          </div>
-          <div class="rel-center">
-            <span class="heart">♥</span>
-            <p>6/12 강제 각인<br>6/20 연인</p>
-          </div>
-          <div class="rel-person eden">
-            <strong>에덴</strong>
-            <span>홍예준 · 28</span>
-            <p class="names">야 → 아가 <small>(5점짜리 전리품)</small> → <b>별하</b></p>
-            <p class="feel">시끄러운 소음이던 센티넬이, 손떨림이 멎는 유일한 곳이 되었다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 프로필 -->
-    <section id="profile" class="section alt">
-      <div class="container">
-        <h2 class="section-title"><span>02</span> 프로필 <small>Agent File</small></h2>
-
-        <div class="tabs" role="tablist">
-          <button role="tab" class="tab eden" aria-selected="true" aria-controls="file-eden" id="tab-eden">SIDE A · EDEN</button>
-          <button role="tab" class="tab asha" aria-selected="false" aria-controls="file-asha" id="tab-asha">SIDE B · ASHA</button>
-        </div>
-
-        <!-- 에덴 -->
-        <article class="agent eden" id="file-eden" role="tabpanel" aria-labelledby="tab-eden">
-          <img class="agent-banner" src="images/eden.webp" alt="EDEN — 담배를 문 금발의 명사수. INTERVENTION LEVEL: DECISIVE">
+    <!-- 창: EDEN.exe -->
+    <section class="win agent-win" id="win-eden" data-x="18%" data-y="56" data-w="620" hidden>
+      <header class="titlebar eden"><span class="t-ico">🔫</span><span class="t-name">EDEN.exe — Agent File</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body scroll">
+        <article class="agent eden">
+          <div class="protect"><img class="agent-banner" src="images/eden.webp" alt="EDEN 배너 일러스트" draggable="false"></div>
           <div class="agent-body">
             <div class="agent-card">
               <h3>AGENT PROFILE</h3>
               <dl class="spec">
                 <div><dt>CODE NAME</dt><dd>에덴 (Eden)</dd></div>
+                <div><dt>REAL NAME</dt><dd>홍예준</dd></div>
                 <div><dt>CLASSIFICATION</dt><dd>S-Class Guide / R.S.T.</dd></div>
                 <div><dt>ATTRIBUTE</dt><dd class="attr">[ 바람 (Aero) ]</dd></div>
                 <div><dt>AGE/NATIONALITY</dt><dd>28세 / 한국</dd></div>
@@ -117,7 +106,6 @@
               <h4>OFFICIAL EVALUATION</h4>
               <blockquote class="eval">“전직 올림픽 금메달리스트라는 이례적인 이력의 소유자. S급 바람 속성 가이드로 분류되나, 파트너 배정을 전면 거부하고 ‘긴급 제압팀(R.S.T.)’의 해결사로만 활동. 센티넬을 ‘결함품’으로 간주, 극도의 권태와 비협조적인 태도를 보임. 가이딩 파장 자체는 안정적이나, ‘강제 각인’ 사태 이전까지 본 가이딩 기록 전무. 파트너(아샤)와의 강제 각인 이후, 관계 안정화와 ‘서포터’ 역할 재정립이 최우선 과제로 판단됨.”</blockquote>
             </div>
-
             <div class="agent-card">
               <h3 class="accent">ABILITY &amp; GEAR</h3>
               <div class="box">
@@ -136,15 +124,21 @@
             </div>
           </div>
         </article>
+      </div>
+    </section>
 
-        <!-- 아샤 -->
-        <article class="agent asha" id="file-asha" role="tabpanel" aria-labelledby="tab-asha" hidden>
-          <img class="agent-banner" src="images/asha.webp" alt="ASHA — 불꽃 속 분홍 머리의 센티넬. THREAT LEVEL: INFERNAL">
+    <!-- 창: ASHA.exe -->
+    <section class="win agent-win" id="win-asha" data-x="40%" data-y="80" data-w="620" hidden>
+      <header class="titlebar asha"><span class="t-ico">🔥</span><span class="t-name">ASHA.exe — Agent File</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body scroll dark">
+        <article class="agent asha">
+          <div class="protect"><img class="agent-banner" src="images/asha.webp" alt="ASHA 배너 일러스트" draggable="false"></div>
           <div class="agent-body">
             <div class="agent-card">
               <h3>AGENT PROFILE</h3>
               <dl class="spec">
                 <div><dt>CODE NAME</dt><dd>아샤 (Asha)</dd></div>
+                <div><dt>REAL NAME</dt><dd>이별하</dd></div>
                 <div><dt>CLASSIFICATION</dt><dd>S-Class Vanguard</dd></div>
                 <div><dt>ATTRIBUTE</dt><dd class="attr">[ 불 (Pyre) ]</dd></div>
                 <div><dt>AGE/NATIONALITY</dt><dd>23세 / 한국</dd></div>
@@ -152,7 +146,6 @@
               <h4>OFFICIAL EVALUATION</h4>
               <blockquote class="eval">“S급 불속성 센티넬 아샤. 전투 데이터상 화력과 판단력은 최상위권이나, 정신 평가 항목에서 예측 불가 판정이 반복됨. 무거운 정보나 위협적인 상황에서도 동요 없이 직진하는 사고 패턴을 보이며, 이는 담대함인지 둔감함인지 평가진 사이에서도 의견이 갈림. 파괴적인 능력과 무관하게, 임무 도중 조우한 인물들에게 사탕을 나눠주는 습성이 지속적으로 관측됨. 위협 등급과 실제 인상 사이의 괴리가 커, 표준 프로파일링으로는 완전한 예측이 불가능.”</blockquote>
             </div>
-
             <div class="agent-card">
               <h3 class="accent">ABILITY OVERVIEW</h3>
               <div class="box">
@@ -174,84 +167,71 @@
       </div>
     </section>
 
-    <!-- 서사 -->
-    <section id="story" class="section">
-      <div class="container">
-        <h2 class="section-title"><span>03</span> 서사 <small>Tracklist</small></h2>
-        <p class="muted">트랙을 눌러서 펼쳐 보세요.</p>
-        <ol class="tracklist">
-          <li>
-            <details open>
-              <summary><span class="no">01</span><span class="name">찾았네 — 강제 각인</span><span class="dur">6/12</span></summary>
-              <div class="track-body">
-                <p>폐허 한가운데, 폭주 직전의 아샤. 총성과 함께 윈드-스테빌라이저 특수탄이 박히고, 담배를 문 남자가 내려다본다. “…찾았네.” 임시 가이딩 이후 아샤의 파장은 에덴 외의 모든 가이드를 튕겨 낸다. 하모니 부서의 판정은 ‘해제 불가’. 파트너를 5년간 거부해 온 남자와 그 센티넬은 S급 전용관 707호에 함께 살게 된다.</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">02</span><span class="name">707호 — 커피 4.5점</span><span class="dur">6/13</span></summary>
-              <div class="track-body">
-                <p>동거 첫 아침. 아샤의 단말기에 뜬 ‘오빠’라는 이름에 에덴은 이유도 모른 채 날을 세우지만, 알고 보니 R.S.T. 동료 아벨은 그녀의 친오빠였다. 비상계단에서 쏟아낸 냉소에 돌아온 대답은 “에덴님만 빼고 재미있는 일 없어요!” 그날 저녁 아샤의 알리오 올리오. “울면서 짜다곤 안 했으니까, 실격은 아니야.” 두 사람만의 5점 만점 점수제가 시작된다.</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">03</span><span class="name">낙원 — 총을 쏘는 이유</span><span class="dur">6/13–14</span></summary>
-              <div class="track-body">
-                <p>각성의 대가로 손이 떨려 금메달리스트의 커리어를 잃은 남자. 모든 걸 잃은 인간에게 주어진 낙원이라서, 코드네임은 에덴. 사람을 쏘는 자신을 혐오하던 그에게 아샤는 말한다. “폭주하는 센티넬을 쏴서 진정시키잖아요. 살리는 거잖아요.” 그리고 그는 고백한다. “요즘은… 낙원이 좀 시끄러워졌어.” 사랑 없는 가이딩은 하지 않는다는 그의 신념을 지켜 주려고, 아샤는 스스로 가이딩 수치를 조절하기 시작한다.</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">04</span><span class="name">거기 있어 — 소파 위의 낮잠</span><span class="dur">6/15</span></summary>
-              <div class="track-body">
-                <p>새벽 옥상에서 ‘님’을 떼어 낸 호칭. 다음 날 소파에서 나란히 든 낮잠 속에서, 잠결의 아샤가 그의 품으로 파고든다. 5년 만의 깊은 잠, 그리고 멎어 버린 손떨림. “그래. 거기 있어.”</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">05</span><span class="name">소유물 — 선을 넘은 밤</span><span class="dur">6/16</span></summary>
-              <div class="track-body">
-                <p>안정을 알게 된 남자의 집착이 선을 넘는다. 아샤는 처음으로 707호에서 도망친다. 쫓아온 그에게 그녀가 건넨 건 케이크 한 조각과 한마디. “에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.”</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">06</span><span class="name">태백 — 울보 오빠와 아가</span><span class="dur">6/17–19</span></summary>
-              <div class="track-body">
-                <p>3박 4일 긴급 출장. 다시 고개를 든 통제에 아샤는 “에덴 가이드님”으로 멀어지고, “저 버려도 됩니다”라고 말한다. 무너진 쪽은 에덴이었다. 울면서 사과하는 남자의 입에 그녀는 레몬 사탕을 넣어 준다. “에덴을 제가 왜 포기해요.” 5점 만점의 보상으로 소원권 한 장, 그리고 호칭 계약. 그녀는 ‘아가’가 되고, 그는 ‘오빠’가 된다. “오빠는 너만 부를 수 있는 거니까.”</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">07</span><span class="name">사겨요 — 홍예준, 이별하</span><span class="dur">6/20</span></summary>
-              <div class="track-body">
-                <p>707호로 돌아온 밤, 미뤄 둔 대답. “응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.” 코드네임 대신 건넨 본명은 홍예준과 이별하. 다음 날 아벨에게 연애 보고 문자가 날아간다.</p>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary><span class="no">08</span><span class="name">Steady Hands — 지금</span><span class="dur">NOW</span></summary>
-              <div class="track-body">
-                <p>사격장 데이트, 동유럽 파견, 칭찬으로 꽉 찬 별점 수첩. 아샤의 가이딩 필요 수치는 0%이고, 707호 부엌은 여전히 예준 차지다. “사귄 이후로 계속, 계~속 오빠만 요리하니까. 내가 할게.”</p>
-              </div>
-            </details>
-          </li>
-        </ol>
+    <!-- 창: relation.txt -->
+    <section class="win" id="win-relation" data-x="30%" data-y="120" data-w="560" hidden>
+      <header class="titlebar"><span class="t-ico">💌</span><span class="t-name">relation.txt — 메모장</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body notepad">
+        <div class="rel">
+          <div class="rel-card asha">
+            <p class="who">아샤 <span>이별하 · 23 · 불</span></p>
+            <p class="calls">에덴님 → 에덴 → 에덴 오빠 → <b>예준 오빠</b></p>
+            <p class="feel">강제 각인된 그날부터 에덴을 ‘파트너’로 생각했다. 무표정 가면은 그의 앞에서만 벗는다.</p>
+          </div>
+          <div class="rel-mid"><span class="heart">♥</span><p>6/12 강제 각인<br>6/20 연인</p></div>
+          <div class="rel-card eden">
+            <p class="who">에덴 <span>홍예준 · 28 · 바람</span></p>
+            <p class="calls">야 → 아가 <small>(5점짜리 전리품)</small> → <b>별하</b></p>
+            <p class="feel">시끄러운 소음이던 센티넬이, 손떨림이 멎는 유일한 곳이 되었다.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 세계관 -->
-    <section id="world" class="section alt">
-      <div class="container">
-        <h2 class="section-title"><span>04</span> 세계관 &amp; 키워드</h2>
+    <!-- 창: tracklist -->
+    <section class="win" id="win-story" data-x="22%" data-y="90" data-w="700" hidden>
+      <header class="titlebar"><span class="t-ico">📼</span><span class="t-name">tracklist.mp3 — 서사</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body story">
+        <ol class="tracks" id="tracks" role="listbox" aria-label="트랙 목록"></ol>
+        <div class="track-view">
+          <p class="tv-meta"><span id="tv-no">01</span> · <span id="tv-date">6/12</span></p>
+          <h3 id="tv-title"></h3>
+          <p id="tv-text"></p>
+          <div class="tv-nav">
+            <button id="tv-prev">⏮ 이전</button>
+            <button id="tv-next">다음 ⏭</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 창: M.Chat -->
+    <section class="win" id="win-chat" data-x="56%" data-y="70" data-w="400" hidden>
+      <header class="titlebar"><span class="t-ico">💬</span><span class="t-name">M.Chat — 707호 (2)</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body chat scroll">
+        <p class="chat-day">— 6/12 폐허 —</p>
+        <div class="msg eden"><b>에덴</b><p>…찾았네.</p></div>
+        <p class="chat-day">— 6/13 비상계단 —</p>
+        <div class="msg asha"><b>아샤</b><p>에덴님만 빼고 재미있는 일 없어요!</p></div>
+        <p class="chat-day">— 6/13 식탁 —</p>
+        <div class="msg eden"><b>에덴</b><p>근데 요즘은… 낙원이 좀 시끄러워졌어.</p></div>
+        <div class="msg asha"><b>아샤</b><p>폭주하는 센티넬을 쏴서 진정시키잖아요. 센티넬을 살리잖아요.</p></div>
+        <p class="chat-day">— 6/15 소파 —</p>
+        <div class="msg eden"><b>에덴</b><p>그래. 거기 있어.</p></div>
+        <p class="chat-day">— 6/16 —</p>
+        <div class="msg asha"><b>아샤</b><p>에덴의 소유물은 되고 싶지 않아요.</p></div>
+        <div class="msg asha"><b>아샤</b><p>…싫지는 않거든요.</p></div>
+        <p class="chat-day">— 6/19 태백 —</p>
+        <div class="msg eden"><b>에덴</b><p>오빠는 너만 부를 수 있는 거니까.</p></div>
+        <p class="chat-day">— 6/20 707호 —</p>
+        <div class="msg asha"><b>아샤</b><p>응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.</p></div>
+        <p class="chat-read">읽음 ✓✓</p>
+      </div>
+    </section>
+
+    <!-- 창: keywords.hlp -->
+    <section class="win" id="win-help" data-x="48%" data-y="110" data-w="520" hidden>
+      <header class="titlebar"><span class="t-ico">📒</span><span class="t-name">keywords.hlp — 세계관 도움말</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body scroll">
         <dl class="glossary">
           <div><dt>ARCH · R.S.T.</dt><dd>센티넬과 가이드를 관리하는 기관과, 폭주 센티넬을 진압하는 그 산하 긴급 제압팀. 에덴은 R.S.T.의 에이스.</dd></div>
           <div><dt>강제 각인</dt><dd>임시 가이딩 이후 아샤의 파장이 에덴 외의 가이드를 모두 거부하게 된 사태. 해제 불가.</dd></div>
@@ -265,53 +245,70 @@
       </div>
     </section>
 
-    <!-- 대사 -->
-    <section id="quotes" class="section">
-      <div class="container">
-        <h2 class="section-title"><span>05</span> 명대사</h2>
-        <div class="quotes">
-          <blockquote class="eden"><p>“…찾았네.”</p><cite>— 에덴, 6/12 폐허</cite></blockquote>
-          <blockquote class="asha"><p>“에덴님만 빼고 재미있는 일 없어요!”</p><cite>— 아샤, 6/13 비상계단</cite></blockquote>
-          <blockquote class="eden"><p>“근데 요즘은… 낙원이 좀 시끄러워졌어.”</p><cite>— 에덴, 6/13 식탁</cite></blockquote>
-          <blockquote class="asha"><p>“폭주하는 센티넬을 쏴서 진정시키잖아요. 센티넬을 살리잖아요.”</p><cite>— 아샤, 6/13 식탁</cite></blockquote>
-          <blockquote class="eden"><p>“그래. 거기 있어.”</p><cite>— 에덴, 6/15 소파</cite></blockquote>
-          <blockquote class="asha"><p>“에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.”</p><cite>— 아샤, 6/16</cite></blockquote>
-          <blockquote class="eden"><p>“오빠는 너만 부를 수 있는 거니까.”</p><cite>— 에덴, 6/19 태백</cite></blockquote>
-          <blockquote class="asha"><p>“응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.”</p><cite>— 아샤, 6/20 707호</cite></blockquote>
+    <!-- 창: 별점수첩 -->
+    <section class="win" id="win-rate" data-x="60%" data-y="150" data-w="360" hidden>
+      <header class="titlebar"><span class="t-ico">⭐</span><span class="t-name">별점수첩.memo</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body memo">
+        <p class="memo-q">오늘의 에덴×아샤에게 별점을!</p>
+        <div class="stars" id="stars" role="radiogroup" aria-label="별점">
+          <button data-v="1" aria-label="1점">★</button><button data-v="2" aria-label="2점">★</button><button data-v="3" aria-label="3점">★</button><button data-v="4" aria-label="4점">★</button><button data-v="5" aria-label="5점">★</button>
         </div>
+        <p class="memo-a" id="rate-msg">별을 눌러 주세요.</p>
+        <ul class="memo-log">
+          <li><span>6/13</span> 아샤의 커피 — ★★★★☆ <em>(설탕 없어서 -0.5, 아벨)</em></li>
+          <li><span>6/13</span> 아샤의 알리오 올리오 — 실격은 아님 <em>(에덴)</em></li>
+          <li><span>6/19</span> 에덴의 토스트 + 딸기 스무디 — ★★★★★ <em>(아샤)</em></li>
+          <li><span>NOW</span> 딸기 케이크 사 준 예준 오빠 — ★★★★★ <em>(강제)</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 창: 휴지통 -->
+    <section class="win" id="win-trash" data-x="64%" data-y="200" data-w="340" hidden>
+      <header class="titlebar"><span class="t-ico">🗑️</span><span class="t-name">휴지통</span><span class="t-btns"><button class="b-min" aria-label="최소화">_</button><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body trash">
+        <ul>
+          <li>📄 각방_신청서.doc <span>6/16 · 취소됨</span></li>
+          <li>📄 결함품_목록.xls <span>더 이상 필요 없음</span></li>
+          <li>📄 에덴님_호칭.txt <span>6/15 · ‘님’ 삭제</span></li>
+          <li>📄 강제각인_해제요청.pdf <span>반려: 해제 불가</span></li>
+        </ul>
+        <button class="pix-btn" id="trash-empty">휴지통 비우기</button>
+      </div>
+    </section>
+
+    <!-- 시작 다이얼로그 -->
+    <section class="win dialog" id="win-hello" data-x="center" data-y="center" data-w="380" hidden>
+      <header class="titlebar"><span class="t-ico">♥</span><span class="t-name">EDEN LOVE MARKET</span><span class="t-btns"><button class="b-close" aria-label="닫기">×</button></span></header>
+      <div class="win-body dlg">
+        <p>S급 전용관 <b>707호</b>에 로그인하시겠습니까?<br><small>※ 각인된 파트너만 입장할 수 있습니다.</small></p>
+        <div class="dlg-btns">
+          <button class="pix-btn" id="hello-yes">はい / 네</button>
+          <button class="pix-btn" id="hello-no">いいえ / 아니오</button>
+        </div>
+        <p class="dlg-err" id="hello-err" hidden>⚠ 강제 각인은 해제할 수 없습니다.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>EDEN × ASHA · 홍예준 × 이별하</p>
-      <p class="muted">© <span id="year"></span> · 일러스트와 설정의 무단 사용을 금지합니다.</p>
-    </div>
+  <!-- 작업 표시줄 -->
+  <footer class="taskbar">
+    <button class="start" data-open="win-hello">♥ start</button>
+    <div class="tasks" id="tasks"></div>
+    <span class="tray">© EDEN×ASHA · 무단 저장 금지</span>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- 우클릭 대신 뜨는 메뉴 -->
+  <div class="ctx" id="ctx" hidden>
+    <p class="ctx-head">🔒 707호 보안 시스템</p>
+    <p class="ctx-dis">이미지 저장</p>
+    <p class="ctx-dis">이미지 주소 복사</p>
+    <p class="ctx-dis">페이지 소스 보기</p>
+    <p class="ctx-note">일러스트와 설정의 무단 사용을 금지합니다.</p>
+  </div>
 
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
-    }));
+  <div class="toast" id="toast" hidden></div>
 
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        const selected = t === tab;
-        t.setAttribute('aria-selected', selected);
-        document.getElementById(t.getAttribute('aria-controls')).hidden = !selected;
-      });
-    }));
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
