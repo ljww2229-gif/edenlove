@@ -1,1 +1,132 @@
-<h1>안녕
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eden Love</title>
+  <meta name="description" content="Eden Love — 사랑이 자라는 정원">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Eden<span>Love</span></a>
+      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#about">소개</a>
+        <a href="#services">하는 일</a>
+        <a href="#gallery">갤러리</a>
+        <a href="#contact">연락처</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Welcome to Eden Love</p>
+        <h1>사랑이 자라는 정원,<br>에덴러브에 오신 것을 환영합니다</h1>
+        <p class="lead">따뜻한 마음과 이야기가 모이는 곳. 여기에 소개 문구를 적어 주세요.</p>
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-primary">더 알아보기</a>
+          <a href="#contact" class="btn btn-ghost">문의하기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>소개</h2>
+          <p>에덴러브는 … 입니다. 이곳에 우리가 누구인지, 어떤 마음으로 시작했는지 자유롭게 소개해 주세요.</p>
+          <p>두 번째 문단에는 비전이나 목표, 앞으로의 계획을 담으면 좋습니다.</p>
+        </div>
+        <div class="about-card">
+          <div class="stat"><strong>2026</strong><span>시작한 해</span></div>
+          <div class="stat"><strong>100+</strong><span>함께한 사람들</span></div>
+          <div class="stat"><strong>♥</strong><span>사랑과 나눔</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2>하는 일</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🌱</div>
+            <h3>첫 번째 활동</h3>
+            <p>활동이나 서비스에 대한 간단한 설명을 적어 주세요.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>두 번째 활동</h3>
+            <p>활동이나 서비스에 대한 간단한 설명을 적어 주세요.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌷</div>
+            <h3>세 번째 활동</h3>
+            <p>활동이나 서비스에 대한 간단한 설명을 적어 주세요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>갤러리</h2>
+        <p class="muted">사진을 <code>images/</code> 폴더에 넣고 아래 칸을 이미지로 바꿔 주세요.</p>
+        <div class="gallery">
+          <div class="ph">사진 1</div>
+          <div class="ph">사진 2</div>
+          <div class="ph">사진 3</div>
+          <div class="ph">사진 4</div>
+          <div class="ph">사진 5</div>
+          <div class="ph">사진 6</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>연락처</h2>
+          <ul class="contact-list">
+            <li><span>이메일</span> hello@example.com</li>
+            <li><span>전화</span> 010-0000-0000</li>
+            <li><span>주소</span> 서울특별시 …</li>
+          </ul>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.form-note').hidden = false; this.reset();">
+          <label>이름<input type="text" name="name" required></label>
+          <label>이메일<input type="email" name="email" required></label>
+          <label>메시지<textarea name="message" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-primary">보내기</button>
+          <p class="form-note" hidden>감사합니다! (현재는 데모 폼이라 실제로 전송되지는 않아요.)</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Eden Love. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+    }));
+  </script>
+</body>
+</html>
