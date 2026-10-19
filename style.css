@@ -301,12 +301,7 @@ img { -webkit-user-drag: none; user-drag: none; pointer-events: none; -webkit-to
 .tasks button.on { background: var(--lav); color: #fff; box-shadow: inset 1px 1px 0 var(--lav-deep); }
 .tray { color: var(--muted); white-space: nowrap; }
 
-/* ===== 우클릭 메뉴 / 토스트 ===== */
-.ctx { position: fixed; z-index: 9000; width: 210px; background: #fff; border: 2px solid var(--lav-deep); box-shadow: 4px 4px 0 rgb(138 108 240 / .4); font-size: .85rem; }
-.ctx p { margin: 0; padding: 6px 10px; }
-.ctx-head { background: linear-gradient(90deg, var(--lav-deep), var(--pink)); color: #fff; font-family: var(--pix); }
-.ctx-dis { color: #bbb; text-decoration: line-through; }
-.ctx-note { font-size: .75rem; color: var(--pink-deep); border-top: 1px dashed var(--lav); }
+/* ===== 토스트 ===== */
 .toast {
   position: fixed; z-index: 9100; left: 50%; bottom: calc(var(--bar-h) + 16px); transform: translateX(-50%);
   background: #fff; border: 2px solid var(--lav-deep); padding: 8px 14px; font-family: var(--pix); font-size: .85rem;

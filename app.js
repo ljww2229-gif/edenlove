@@ -243,25 +243,14 @@
   $('#trash-empty').addEventListener('click', () => toast('⚠ 강제각인_해제요청.pdf 는 삭제할 수 없습니다.'));
 
   /* ---------- 우클릭 · 저장 방지 ---------- */
-  const ctx = $('#ctx');
-  document.addEventListener('contextmenu', e => {
-    e.preventDefault();
-    ctx.hidden = false;
-    const x = Math.min(e.clientX, innerWidth - 220);
-    const y = Math.min(e.clientY, innerHeight - 160);
-    ctx.style.left = x + 'px';
-    ctx.style.top = y + 'px';
-  });
-  document.addEventListener('click', () => { ctx.hidden = true; });
+  document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
   document.addEventListener('keydown', e => {
     const k = e.key.toLowerCase();
     const mod = e.ctrlKey || e.metaKey;
     if (e.key === 'F12' || (mod && ['s', 'u', 'p'].includes(k)) || (mod && e.shiftKey && ['i', 'j', 'c'].includes(k))) {
       e.preventDefault();
-      toast('🔒 707호 보안 시스템: 저장할 수 없습니다.');
     }
-    if (e.key === 'Escape') ctx.hidden = true;
   });
 
   /* ---------- 부팅 ---------- */
