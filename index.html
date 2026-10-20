@@ -4,47 +4,53 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eden Love</title>
-  <meta name="description" content="에덴 × 아샤 — S급 가이드와 S급 센티넬의 페어 소개">
+  <meta name="description" content="에덴 × 아샤 — 707호의 일기장">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
     <div class="wrap header-inner">
-      <a href="#top" class="logo">EDEN × ASHA</a>
+      <a href="#top" class="logo">EDEN × ASHA <span>diary</span></a>
       <nav class="nav">
-        <a href="#profile">Profile</a>
-        <a href="#relation">Relation</a>
-        <a href="#story">Story</a>
-        <a href="#keywords">Keywords</a>
-        <a href="#quotes">Quotes</a>
+        <a href="#profile">인물</a>
+        <a href="#relation">서로</a>
+        <a href="#diary">일기</a>
+        <a href="#index">색인</a>
+        <a href="#underline">밑줄</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero wrap">
-      <figure class="hero-img protect">
+    <!-- 표지 -->
+    <section class="cover wrap">
+      <figure class="polaroid tilt-l protect">
+        <span class="tape"></span>
         <img src="images/main.webp" alt="아샤가 에덴에게 입을 맞추는 일러스트" draggable="false">
+        <figcaption>707호, 우리.</figcaption>
       </figure>
-      <div class="hero-text">
-        <p class="label">Pair Introduction</p>
+      <div class="cover-text">
+        <p class="hand cover-kicker">707호 일기장</p>
         <h1>에덴 × 아샤</h1>
         <p class="names">홍예준 × 이별하</p>
-        <p class="hero-quote">“…찾았네.”</p>
-        <p class="hero-desc">폐허에서 시작된 강제 각인, 707호에서 시작된 사랑.<br>권태로운 S급 가이드와 사탕을 나눠 주는 S급 센티넬의 이야기.</p>
-        <p class="tags">센티넬버스 · 강제각인 · 707호 동거 · 혐관에서 연인</p>
+        <p class="cover-quote">“…찾았네.”</p>
+        <p class="cover-desc">폐허에서 시작된 강제 각인, 707호에서 시작된 사랑.<br>권태로운 S급 가이드와 사탕을 나눠 주는 S급 센티넬의 기록.</p>
+        <p class="hand cover-period">2025. 06. 12 ~ 계속 쓰는 중</p>
       </div>
     </section>
 
-    <!-- 프로필 -->
-    <section id="profile" class="section wrap">
-      <h2 class="section-title"><span>01</span>Profile</h2>
+    <!-- 인물 -->
+    <section id="profile" class="page wrap">
+      <h2 class="page-title"><span class="hand">p.1</span>인물 기록</h2>
       <div class="profiles">
         <article class="profile">
-          <div class="protect"><img src="images/eden.webp" alt="EDEN 일러스트" draggable="false"></div>
+          <figure class="photo tilt-r protect">
+            <span class="tape"></span>
+            <img src="images/eden.webp" alt="EDEN 일러스트" draggable="false">
+          </figure>
           <h3>에덴 <small>Eden</small></h3>
           <p class="catch">권태에 잠식된 명사수, 당신이라는 족쇄에 묶이다.</p>
           <dl class="spec">
@@ -64,10 +70,14 @@
             <h4>‘윈드-스테빌라이저’ 특수탄 <small>Gear</small></h4>
             <p>그의 S급 바람 파장을 기반으로 특수 제작된 ‘가이딩 주사기’. 총알 내부에 농축된 신경 안정제가 명중 시, ‘바람의 확산’ 속성으로 발현되어 기체(Aerosol) 형태로 전신 신경계에 ‘확산’됩니다. 대상을 일시적으로 무력화 및 강제 안정 상태로 만듭니다. ‘본 가이딩’을 위한 완벽한 사전 작업입니다.</p>
           </details>
+          <p class="hand memo">* 쓴 커피파. 아샤 커피 취향은 아직 연구 중.</p>
         </article>
 
         <article class="profile">
-          <div class="protect"><img src="images/asha.webp" alt="ASHA 일러스트" draggable="false"></div>
+          <figure class="photo tilt-l protect">
+            <span class="tape"></span>
+            <img src="images/asha.webp" alt="ASHA 일러스트" draggable="false">
+          </figure>
           <h3>아샤 <small>Asha</small></h3>
           <p class="catch">희망이라는 이름을 가졌으나, 그녀가 남기는 것은 오직 재뿐이다.</p>
           <dl class="spec">
@@ -89,94 +99,79 @@
             <h4>폭주 징후 <small>Rampage Protocol</small></h4>
             <p>가이딩 수치 65%부터 낫을 휘두르는 반경이 통제 없이 확장된다. 임계점(70%) 돌파 시, 아군과 적군의 구분 없이 시야에 들어오는 모든 ‘온기’를 소각 대상으로 인식하는 완전 심판자 상태가 된다.</p>
           </details>
+          <p class="hand memo">* 쓴 거 못 먹음. 주머니엔 항상 레몬 사탕.</p>
         </article>
       </div>
     </section>
 
-    <!-- 관계 -->
-    <section id="relation" class="section wrap">
-      <h2 class="section-title"><span>02</span>Relation</h2>
-      <div class="relation">
-        <div>
-          <p class="rel-who">아샤 → 에덴</p>
-          <p class="rel-calls">에덴님 → 에덴 → 에덴 오빠 → 예준 오빠</p>
-          <p class="rel-feel">강제 각인된 그날부터 에덴을 ‘파트너’로 생각했다. 무표정 가면은 그의 앞에서만 벗는다.</p>
+    <!-- 서로 -->
+    <section id="relation" class="page wrap">
+      <h2 class="page-title"><span class="hand">p.2</span>서로에 대해</h2>
+      <div class="notes">
+        <div class="note tilt-l">
+          <p class="hand note-head">아샤가 본 에덴</p>
+          <p class="note-calls">에덴님 → 에덴 → 에덴 오빠 → 예준 오빠</p>
+          <p>강제 각인된 그날부터 에덴을 ‘파트너’로 생각했다. 무표정 가면은 그의 앞에서만 벗는다.</p>
         </div>
-        <div>
-          <p class="rel-who">에덴 → 아샤</p>
-          <p class="rel-calls">야 → 아가 → 별하</p>
-          <p class="rel-feel">시끄러운 소음이던 센티넬이, 손떨림이 멎는 유일한 곳이 되었다.</p>
+        <div class="note tilt-r">
+          <p class="hand note-head">에덴이 본 아샤</p>
+          <p class="note-calls">야 → 아가 → 별하</p>
+          <p>시끄러운 소음이던 센티넬이, 손떨림이 멎는 유일한 곳이 되었다.</p>
         </div>
       </div>
-      <p class="rel-line">6/12 강제 각인 — 6/20 연인</p>
+      <p class="hand rel-line">6/12 강제 각인 &nbsp;→&nbsp; 6/20 연인</p>
     </section>
 
-    <!-- 서사 -->
-    <section id="story" class="section wrap">
-      <h2 class="section-title"><span>03</span>Story</h2>
-      <ol class="story">
-        <li>
-          <p class="s-date">6/12</p>
-          <div>
-            <h3>찾았네 — 강제 각인</h3>
-            <p>폐허 한가운데, 폭주 직전의 아샤. 총성과 함께 윈드-스테빌라이저 특수탄이 박히고, 담배를 문 남자가 내려다본다. “…찾았네.” 임시 가이딩 이후 아샤의 파장은 에덴 외의 모든 가이드를 튕겨 낸다. 하모니 부서의 판정은 ‘해제 불가’. 파트너를 5년간 거부해 온 남자와 그 센티넬은 S급 전용관 707호에 함께 살게 된다.</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/13</p>
-          <div>
-            <h3>707호 — 커피 4.5점</h3>
-            <p>동거 첫 아침. 아샤의 단말기에 뜬 ‘오빠’라는 이름에 에덴은 이유도 모른 채 날을 세우지만, 알고 보니 R.S.T. 동료 아벨은 그녀의 친오빠였다. 비상계단에서 쏟아낸 냉소에 돌아온 대답은 “에덴님만 빼고 재미있는 일 없어요!” 그날 저녁 아샤의 알리오 올리오. “울면서 짜다곤 안 했으니까, 실격은 아니야.” 두 사람만의 5점 만점 점수제가 시작된다.</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/13–14</p>
-          <div>
-            <h3>낙원 — 총을 쏘는 이유</h3>
-            <p>각성의 대가로 손이 떨려 금메달리스트의 커리어를 잃은 남자. 모든 걸 잃은 인간에게 주어진 낙원이라서, 코드네임은 에덴. 사람을 쏘는 자신을 혐오하던 그에게 아샤는 말한다. “폭주하는 센티넬을 쏴서 진정시키잖아요. 살리는 거잖아요.” 그리고 그는 고백한다. “요즘은… 낙원이 좀 시끄러워졌어.”</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/15</p>
-          <div>
-            <h3>거기 있어 — 소파 위의 낮잠</h3>
-            <p>새벽 옥상에서 ‘님’을 떼어 낸 호칭. 다음 날 소파에서 나란히 든 낮잠 속에서, 잠결의 아샤가 그의 품으로 파고든다. 5년 만의 깊은 잠, 그리고 멎어 버린 손떨림. “그래. 거기 있어.”</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/16</p>
-          <div>
-            <h3>소유물 — 선을 넘은 밤</h3>
-            <p>안정을 알게 된 남자의 집착이 선을 넘는다. 아샤는 처음으로 707호에서 도망친다. 쫓아온 그에게 그녀가 건넨 건 케이크 한 조각과 한마디. “에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.”</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/17–19</p>
-          <div>
-            <h3>태백 — 울보 오빠와 아가</h3>
-            <p>3박 4일 긴급 출장. 다시 고개를 든 통제에 아샤는 “에덴 가이드님”으로 멀어지고, “저 버려도 됩니다”라고 말한다. 무너진 쪽은 에덴이었다. 울면서 사과하는 남자의 입에 그녀는 레몬 사탕을 넣어 준다. “에덴을 제가 왜 포기해요.” 5점 만점의 보상으로 소원권 한 장, 그리고 호칭 계약. “오빠는 너만 부를 수 있는 거니까.”</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">6/20</p>
-          <div>
-            <h3>사겨요 — 홍예준, 이별하</h3>
-            <p>707호로 돌아온 밤, 미뤄 둔 대답. “응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.” 코드네임 대신 건넨 본명은 홍예준과 이별하.</p>
-          </div>
-        </li>
-        <li>
-          <p class="s-date">Now</p>
-          <div>
-            <h3>Steady Hands — 지금</h3>
-            <p>사격장 데이트, 동유럽 파견, 칭찬으로 꽉 찬 별점 수첩. 아샤의 가이딩 필요 수치는 0%이고, 707호 부엌은 여전히 예준 차지다.</p>
-          </div>
-        </li>
-      </ol>
+    <!-- 일기 -->
+    <section id="diary" class="page wrap">
+      <h2 class="page-title"><span class="hand">p.3</span>일기</h2>
+      <div class="entries">
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 12. 목</span><span class="weather">날씨: 흐림, 먼지 자욱</span></p>
+          <h3>찾았네 — 강제 각인</h3>
+          <p>폐허 한가운데, 폭주 직전의 아샤. 총성과 함께 윈드-스테빌라이저 특수탄이 박히고, 담배를 문 남자가 내려다본다. “…찾았네.” 임시 가이딩 이후 아샤의 파장은 에덴 외의 모든 가이드를 튕겨 낸다. 하모니 부서의 판정은 ‘해제 불가’. 파트너를 5년간 거부해 온 남자와 그 센티넬은 S급 전용관 707호에 함께 살게 된다.</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 13. 금</span><span class="weather">날씨: 맑음 · 커피 ★4.5</span></p>
+          <h3>707호 — 커피 4.5점</h3>
+          <p>동거 첫 아침. 아샤의 단말기에 뜬 ‘오빠’라는 이름에 에덴은 이유도 모른 채 날을 세우지만, 알고 보니 R.S.T. 동료 아벨은 그녀의 친오빠였다. 비상계단에서 쏟아낸 냉소에 돌아온 대답은 “에덴님만 빼고 재미있는 일 없어요!” 그날 저녁 아샤의 알리오 올리오. “울면서 짜다곤 안 했으니까, 실격은 아니야.” 두 사람만의 5점 만점 점수제가 시작된다.</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 13. ~ 14.</span><span class="weather">날씨: 밤, 와인 한 병</span></p>
+          <h3>낙원 — 총을 쏘는 이유</h3>
+          <p>각성의 대가로 손이 떨려 금메달리스트의 커리어를 잃은 남자. 모든 걸 잃은 인간에게 주어진 낙원이라서, 코드네임은 에덴. 사람을 쏘는 자신을 혐오하던 그에게 아샤는 말한다. “폭주하는 센티넬을 쏴서 진정시키잖아요. 살리는 거잖아요.” 그리고 그는 고백한다. “요즘은… 낙원이 좀 시끄러워졌어.”</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 15. 일</span><span class="weather">날씨: 새벽 바람</span></p>
+          <h3>거기 있어 — 소파 위의 낮잠</h3>
+          <p>새벽 옥상에서 ‘님’을 떼어 낸 호칭. 다음 날 소파에서 나란히 든 낮잠 속에서, 잠결의 아샤가 그의 품으로 파고든다. 5년 만의 깊은 잠, 그리고 멎어 버린 손떨림. “그래. 거기 있어.”</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 16. 월</span><span class="weather">날씨: 비</span></p>
+          <h3>소유물 — 선을 넘은 밤</h3>
+          <p>안정을 알게 된 남자의 집착이 선을 넘는다. 아샤는 처음으로 707호에서 도망친다. 쫓아온 그에게 그녀가 건넨 건 케이크 한 조각과 한마디. “에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.”</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 17. ~ 19.</span><span class="weather">날씨: 태백, 비 온 뒤 갬</span></p>
+          <h3>태백 — 울보 오빠와 아가</h3>
+          <p>3박 4일 긴급 출장. 다시 고개를 든 통제에 아샤는 “에덴 가이드님”으로 멀어지고, “저 버려도 됩니다”라고 말한다. 무너진 쪽은 에덴이었다. 울면서 사과하는 남자의 입에 그녀는 레몬 사탕을 넣어 준다. “에덴을 제가 왜 포기해요.” 5점 만점의 보상으로 소원권 한 장, 그리고 호칭 계약. “오빠는 너만 부를 수 있는 거니까.”</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">2025. 6. 20. 금</span><span class="weather">날씨: 맑음 ♥</span></p>
+          <h3>사겨요 — 홍예준, 이별하</h3>
+          <p>707호로 돌아온 밤, 미뤄 둔 대답. “응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.” 코드네임 대신 건넨 본명은 홍예준과 이별하.</p>
+        </article>
+        <article class="entry">
+          <p class="entry-date"><span class="hand">그리고 지금</span><span class="weather">날씨: 동유럽, 딸기 케이크</span></p>
+          <h3>Steady Hands</h3>
+          <p>사격장 데이트, 동유럽 파견, 칭찬으로 꽉 찬 별점 수첩. 아샤의 가이딩 필요 수치는 0%이고, 707호 부엌은 여전히 예준 차지다.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- 키워드 -->
-    <section id="keywords" class="section wrap">
-      <h2 class="section-title"><span>04</span>Keywords</h2>
+    <!-- 색인 -->
+    <section id="index" class="page wrap">
+      <h2 class="page-title"><span class="hand">p.4</span>색인</h2>
       <dl class="keywords">
         <div><dt>ARCH · R.S.T.</dt><dd>센티넬과 가이드를 관리하는 기관과, 폭주 센티넬을 진압하는 그 산하 긴급 제압팀. 에덴은 R.S.T.의 에이스.</dd></div>
         <div><dt>강제 각인</dt><dd>임시 가이딩 이후 아샤의 파장이 에덴 외의 가이드를 모두 거부하게 된 사태. 해제 불가.</dd></div>
@@ -184,29 +179,29 @@
         <div><dt>별 5점 만점</dt><dd>아샤의 커피에서 시작된 두 사람만의 점수제. 요리, 데이트, 칭찬 수첩까지 전부 별점으로 매긴다.</dd></div>
         <div><dt>소원권 · 호칭 계약</dt><dd>5점의 보상으로 받은 기한 없는 소원권 한 장. ‘오빠’는 아샤만, ‘아가’는 에덴만 부를 수 있다.</dd></div>
         <div><dt>레몬 사탕</dt><dd>아샤의 주머니 속 간식. 처음 만난 날에도, 에덴이 무너진 날에도 그에게 쥐여 줬다.</dd></div>
-        <div><dt>아벨 (이유성)</dt><dd>아샤의 친오빠. 26세, 얼음 속성 S급 가이드이자 R.S.T. 소속. 동생 바보.</dd></div>
+        <div><dt>아벨 (이별해)</dt><dd>아샤의 친오빠. 26세, 얼음 속성 S급 가이드이자 R.S.T. 소속. 동생 바보.</dd></div>
         <div><dt>Steady Hands</dt><dd>두 사람의 테마곡. 바람 소리와 지포 라이터로 시작해, 떨림이 멎은 호흡으로 끝난다.</dd></div>
       </dl>
     </section>
 
-    <!-- 명대사 -->
-    <section id="quotes" class="section wrap">
-      <h2 class="section-title"><span>05</span>Quotes</h2>
+    <!-- 밑줄 -->
+    <section id="underline" class="page wrap">
+      <h2 class="page-title"><span class="hand">p.5</span>밑줄 친 문장</h2>
       <ul class="quotes">
-        <li><q>…찾았네.</q><span>에덴 · 6/12</span></li>
-        <li><q>에덴님만 빼고 재미있는 일 없어요!</q><span>아샤 · 6/13</span></li>
-        <li><q>근데 요즘은… 낙원이 좀 시끄러워졌어.</q><span>에덴 · 6/13</span></li>
-        <li><q>폭주하는 센티넬을 쏴서 진정시키잖아요. 센티넬을 살리잖아요.</q><span>아샤 · 6/13</span></li>
-        <li><q>그래. 거기 있어.</q><span>에덴 · 6/15</span></li>
-        <li><q>에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.</q><span>아샤 · 6/16</span></li>
-        <li><q>오빠는 너만 부를 수 있는 거니까.</q><span>에덴 · 6/19</span></li>
-        <li><q>응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.</q><span>아샤 · 6/20</span></li>
+        <li><q>…찾았네.</q><span class="hand">에덴, 6/12</span></li>
+        <li><q>에덴님만 빼고 재미있는 일 없어요!</q><span class="hand">아샤, 6/13</span></li>
+        <li><q>근데 요즘은… 낙원이 좀 시끄러워졌어.</q><span class="hand">에덴, 6/13</span></li>
+        <li><q>폭주하는 센티넬을 쏴서 진정시키잖아요. 센티넬을 살리잖아요.</q><span class="hand">아샤, 6/13</span></li>
+        <li><q>그래. 거기 있어.</q><span class="hand">에덴, 6/15</span></li>
+        <li><q>에덴의 소유물은 되고 싶지 않아요. …싫지는 않거든요.</q><span class="hand">아샤, 6/16</span></li>
+        <li><q>오빠는 너만 부를 수 있는 거니까.</q><span class="hand">에덴, 6/19</span></li>
+        <li><q>응… 저도 에덴 좋아해요. 그, 그러니까 사겨요.</q><span class="hand">아샤, 6/20</span></li>
       </ul>
     </section>
   </main>
 
   <footer class="footer wrap">
-    <p>EDEN × ASHA</p>
+    <p class="hand">— 707호 일기장, 끝나지 않음 —</p>
     <p>일러스트와 설정의 무단 사용 및 저장을 금지합니다.</p>
   </footer>
 
